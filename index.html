@@ -21,8 +21,8 @@
                 <p>Welcome to my Website</p>
                 <div>
         <!-- Buttons -->
-                    <button type="button"><span></span>LINKEDIN</button>
-                    <button type="button"><span></span>GITHUB</button>
+                    <button type="button"><span class="button-span"></span>LINKEDIN</button>
+                    <button type="button"><span class="button-span"></span>GITHUB</button>
                 </div>
             </div>
         <!-- About Me Section -->
@@ -33,11 +33,64 @@
                             <img src="Images/Professional profile photo.JPEG">
                         </div>
                         <div class="about-col-2">
-                            <h1>About Me</h1>
+                            <h1 class="sub-title">About Me</h1>
+                            <p class="about-text">Hi there! I am Kieron, a student in Ngee Ann Polytechnic. I am currently in the School of ICT, enrolled into the Cybersecurity & Digital Forensics course where I am immersed in a curriculum that aims to equip me with a solid foundation of cybersecurity principles and practices. From understanding network security and cryptography to learning digital forensics techniques, my course offers a learning environment with a good blend of theoretical and hands-on experience. Additionally, I get to experience collaborative projects and industry-relevant coursework that enhances my technical proficiency and fosters critical thinking and problem-solving skills which are essential in the field of cybersecurity. I am excited about the prospects of applying my knowledge and skills to address evolving challenges in the field and make meaningful contributions to the cybersecurity domain!
+                            </p>
+
+                            <div class="tab-titles">
+                                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                                <p class="tab-links" onclick="opentab('education')">Education</p>
+                                <p class="tab-links" onclick="opentab('certifications')">Certifications</p>
+                            </div>
+                            <div class="tab-contents active-tab" id="skills">
+                                <ul>
+                                    <li><span>Cloud Architecture</span><br>Proficient in AWS ClickOps Infrastructure</li>
+                                    <li><span>Network Security</span><br>Configuring Next Generation Firewalls (NGFWs)</li>
+                                    <li><span>Cyber Threat Management</span><br>Using of SIEM Tools to manage threats</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span>2019-2022</span><br>Anglo-Chinese School (Barker Road)</li>
+                                    <li><span>2022-2026</span><br>Ngee Ann Polytechnic - Diploma in Cybersecurity & Digital Forensics</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="certifications">
+                                <ul>
+                                    <li><span>Amazon Web Services (AWS) - Certified Cloud Practioner</span><br>Obtained Dec 2024</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+<!-- My Services -->
+<div id="'services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            
+        </div>
+    </div>
+</div>
+
+        <script>
+
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+
+        </script>
     </body>
 </html>
