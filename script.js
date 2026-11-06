@@ -516,7 +516,7 @@ setInterval(obliterateSplineBadge, 20);
         function run(el) {
             var target = parseFloat(el.getAttribute("data-target"));
             if (isNaN(target)) { return; }
-            var duration = 1600;
+            var duration = 4000;
             var startTime = null;
 
             function frame(now) {

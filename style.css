@@ -246,7 +246,7 @@ textarea:focus-visible {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     line-height: 1.1;
-    color: #ffffff;
+    color: var(--color-text);
     margin-bottom: var(--space-sm);
     letter-spacing: -0.02em;
 }
@@ -292,7 +292,7 @@ textarea:focus-visible {
     right: 0;
     width: 320px;
     height: 110px;
-    background-color: #0f1720;
+    background-color: var(--color-bg);
     background-image: 
         linear-gradient(rgba(42, 58, 74, 0.15) 1px, transparent 1px),
         linear-gradient(90deg, rgba(42, 58, 74, 0.15) 1px, transparent 1px);
@@ -912,8 +912,8 @@ textarea:focus-visible {
     font-size: 0.85rem;
     transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
-.filter-btn:hover { border-color: var(--color-accent); color: var(--color-text); }
-.filter-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #0b1117; }
+.filter-btn:hover { border-color: var(--color-accent-warm); color: var(--color-text); }
+.filter-btn.active { background: var(--color-accent-warm); border-color: var(--color-accent-warm); color: #0b1117; }
 
 .projects {
     display: grid;
@@ -923,18 +923,18 @@ textarea:focus-visible {
 .project-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-left: 3px solid var(--color-accent);
+    border-left: 3px solid var(--color-accent-warm);
     border-radius: var(--radius-sm);
     display: flex;
     flex-direction: column;
     overflow: hidden;
     transition: transform var(--transition-base), border-color var(--transition-base);
 }
-.project-card:hover { border-color: var(--color-accent); transform: translateY(-4px); }
+.project-card:hover { border-color: var(--color-accent-warm); transform: translateY(-4px); }
 .project-tag {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: var(--color-accent);
+    color: var(--color-accent-warm);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     margin-bottom: var(--space-xs);
@@ -1195,7 +1195,7 @@ html.modal-open { overflow: hidden; }
 .stat:hover {
     transform: translateY(-2px);
 }
-/* Blur and dim surrounding stats when hovering within the stats container */
+
 .stats:hover .stat:not(:hover) {
     filter: blur(4px);
     opacity: 0.4;
@@ -1222,6 +1222,16 @@ html.modal-open { overflow: hidden; }
 @media (pointer: fine) {
     body, a, button, input, textarea {
         cursor: none !important;
+    }
+    /* Restore normal cursor when modal is open so it doesn't get trapped behind the blur */
+    html.modal-open,
+    html.modal-open body,
+    html.modal-open a,
+    html.modal-open button,
+    html.modal-open input,
+    html.modal-open textarea,
+    html.modal-open .contact-modal {
+        cursor: auto !important;
     }
 }
 
@@ -1252,6 +1262,12 @@ html.modal-open { overflow: hidden; }
     transform: translate(-50%, -50%);
     transition: width 0.2s ease, height 0.2s ease, border-color var(--transition-base);
     opacity: 0.6;
+}
+
+/* Hide custom cursor dots entirely when modal is open */
+html.modal-open .custom-cursor-dot,
+html.modal-open .custom-cursor-ring {
+    display: none !important;
 }
 
 /* Click Splash Ripple */
