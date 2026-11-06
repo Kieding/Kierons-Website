@@ -1,97 +1,520 @@
-<html>
-    <head>
-        <!-- Title Section -->
-        <title>Kieron's Website!</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="banner">
-            <div class="navbar">
-                <img src="logo.png" alt="logo" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Experiences</a></li>
-                    <li><a href="#">Hobbies</a></li>
-                    <li><a href="#">Resume</a></li>
-                </ul>
+<!-- WEBSITE CODE -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kieron's portfolio — Cybersecurity & Digital Forensics student at Ngee Ann Polytechnic. Skills, projects, and experience in network security and cloud infrastructure.">
+    <meta name="theme-color" content="#0f1720">
+    <meta name="color-scheme" content="dark light">
+    <title>Kieron's Site</title>
+
+    <link rel="icon" href="Images/logo.png" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <div class="navbar">
+    <div class="navbar-container">
+        <a href="#home" class="logo-link" aria-label="Kieron — home">
+            <span class="logo-text">kieron<span style="color: var(--color-accent);">lim&gt;</span></span>
+        </a>
+
+        <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+            <span class="hamburger" aria-hidden="true"></span>
+        </button>
+
+        <nav id="primaryNav" class="nav" aria-label="Primary">
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="resume.pdf" class="btn btn-outline nav-resume" download>Resume</a>
+                <button type="button" id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Switch to light mode">
+                    <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 15.6a9 9 0 1 1-12.2-12A7.5 7.5 0 0 0 20.6 15.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.6M12 18.9v2.6M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </button>
             </div>
-        <!-- Content and Title Section -->
-            <div class="content">
-                <h1>HEY THERE!<br>I AM KIERON</h1>
-                <p>Welcome to my Website</p>
-                <div>
-        <!-- Buttons -->
-                    <button type="button"><span class="button-span"></span>LINKEDIN</button>
-                    <button type="button"><span class="button-span"></span>GITHUB</button>
+        </nav>
+    </div>
+</div>
+
+    <header class="banner" id="home">
+        <div class="banner-grid container reveal">
+            <div class="hero-content">
+                <span class="hero-tag" id="terminalPrompt">[SYS_OK] Establishing secure handshake...</span>
+                <h1>HELLO I'M<br><span class="highlight-name">KIERON LIM</span></h1>
+                <p>Ngee Ann Polytechnic Graduate | Singapore</p>
+                <div class="hero-actions">
+                    <a href="resume.pdf" class="btn btn-primary" download>
+                        <span class="button-span" aria-hidden="true"></span>
+                        <span class="btn-label">VIEW RESUME</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kieronlim" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin" aria-label="LinkedIn">
+                        <span class="button-span" aria-hidden="true"></span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/kieding" target="_blank" rel="noopener noreferrer" class="btn btn-github" aria-label="GitHub">
+                        <span class="button-span" aria-hidden="true"></span>
+                        <svg class="btn-icon" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill="currentColor" d="M8 0c-4.42 0-8 3.58-8 8a8.013 8.013 0 0 0 5.47 7.59c.4.08.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
-        <!-- About Me Section -->
-            <div id="about">
-                <div class="container">
-                    <div class="row">
-                        <div class="about-col-1">
-                            <img src="Images/Professional profile photo.JPEG">
-                        </div>
-                        <div class="about-col-2">
-                            <h1 class="sub-title">About Me</h1>
-                            <p class="about-text">Hi there! I am Kieron, a student in Ngee Ann Polytechnic. I am currently in the School of ICT, enrolled into the Cybersecurity & Digital Forensics course where I am immersed in a curriculum that aims to equip me with a solid foundation of cybersecurity principles and practices. From understanding network security and cryptography to learning digital forensics techniques, my course offers a learning environment with a good blend of theoretical and hands-on experience. Additionally, I get to experience collaborative projects and industry-relevant coursework that enhances my technical proficiency and fosters critical thinking and problem-solving skills which are essential in the field of cybersecurity. I am excited about the prospects of applying my knowledge and skills to address evolving challenges in the field and make meaningful contributions to the cybersecurity domain!
-                            </p>
+        <div class="hero-visual" id="heroVisual">
+            <canvas id="canvas3d"></canvas>
+            <div class="watermark-shield"></div>
+            <div class="hud-badge hud-badge-top">FW_V0.9 // SECURE</div>
+            <div class="hud-badge hud-badge-bottom">RSSI: -42dBm [ENCRYPTED]</div>
+        </div>
+    </div>
+</div>
+        </div>
+    </header>
 
-                            <div class="tab-titles">
-                                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                                <p class="tab-links" onclick="opentab('education')">Education</p>
-                                <p class="tab-links" onclick="opentab('certifications')">Certifications</p>
+    <main id="main">
+        <!-- My stats :) -->
+        <div class="stats-band">
+            <ul class="container stats">
+                <li class="stat">
+                    <span class="stat-number" data-target="5">5</span>
+                    <span class="stat-label">Certifications</span>
+                </li>
+                <li class="stat">
+                    <span class="stat-number" data-target="3.74" data-decimals="2">3.74</span>
+                    <span class="stat-label">Graduating CGPA</span>
+                </li>
+                <li class="stat">
+                    <span class="stat-number" data-target="6">6</span>
+                    <span class="stat-label">Core skill areas</span>
+                </li>
+                <li class="stat">
+                    <span class="stat-number" data-target="3">3</span>
+                    <span class="stat-label">Years of Study Experience</span>
+                </li>
+            </ul>
+        </div>
+        <!-- About Me -->
+        <section id="about" class="section reveal">
+            <div class="container">
+                <div class="row about-row">
+                    <div class="about-col-1">
+                        <div class="cyber-ring-container">
+                            <div class="cyber-ring"></div>
+                            <div class="cyber-ring-inner"></div>
+                            <div class="profile-frame">
+                                <img src="Images/Professional profile photo v2.JPG" alt="Portrait photo of me" loading="lazy">
                             </div>
-                            <div class="tab-contents active-tab" id="skills">
-                                <ul>
-                                    <li><span>Cloud Architecture</span><br>Proficient in AWS ClickOps Infrastructure</li>
-                                    <li><span>Network Security</span><br>Configuring Next Generation Firewalls (NGFWs)</li>
-                                    <li><span>Cyber Threat Management</span><br>Using of SIEM Tools to manage threats</li>
-                                </ul>
-                            </div>
-                            <div class="tab-contents" id="education">
-                                <ul>
-                                    <li><span>2019-2022</span><br>Anglo-Chinese School (Barker Road)</li>
-                                    <li><span>2022-2026</span><br>Ngee Ann Polytechnic - Diploma in Cybersecurity & Digital Forensics</li>
-                                </ul>
-                            </div>
-                            <div class="tab-contents" id="certifications">
-                                <ul>
-                                    <li><span>Amazon Web Services (AWS) - Certified Cloud Practioner</span><br>Obtained Dec 2024</li>
-                                </ul>
-                            </div>
+                        </div>
+                    </div>
+                    <div class="about-col-2">
+                        <h2 class="sub-title">About Me</h2>
+                        <p class="about-text">Hi! I'm Kieron, a Cybersecurity & Digital Forensics (CSF) diploma graduate from Ngee Ann Polytechnic's School of ICT. Throughout my studies, I gained a strong foundation in cybersecurity, network security, and digital forensics through a mix of theoretical learning and hands-on projects. I'm someone who enjoys thinking outside the box, solving problems, and exploring new ideas. I’m always eager to learn new skills, take on challenges, and step out of my comfort zone. I value creativity, adaptability, and continuous growth, both personally and professionally.<br><br>Welcome to my website!</p>
+                        <div class="tab-titles" role="tablist" aria-label="About Kieron">
+                            <button type="button" class="tab-links active-link" id="tab-skills" role="tab" aria-selected="true" aria-controls="skills" data-tab="skills">Skills</button>
+                            <button type="button" class="tab-links" id="tab-education" role="tab" aria-selected="false" tabindex="-1" aria-controls="education" data-tab="education">Education</button>
+                            <button type="button" class="tab-links" id="tab-certifications" role="tab" aria-selected="false" tabindex="-1" aria-controls="certifications" data-tab="certifications">Certifications</button>
+                            <button type="button" class="tab-links" id="tab-awards" role="tab" aria-selected="false" tabindex="-1" aria-controls="awards" data-tab="awards">Awards</button>
+                        </div>
+
+                        <div class="tab-contents active-tab" id="skills" role="tabpanel" aria-labelledby="tab-skills">
+                            <ul>
+                                <li><span>Web Application Penetration Testing</span><br>Utilising open-source tools for white hacking</li>
+                                <li><span>Cloud Architecture</span><br>Proficient in AWS/Microsoft Azure ClickOps Infrastructure</li>
+                                <li><span>Network Security</span><br>Configuring Next Generation Firewalls (NGFWs) for enterprise security</li>
+                                <li><span>Cyber Threat Management</span><br>Using of SIEM Tools to manage threats</li>
+                                <li><span>Malware Analysis</span><br>Analysing different malware types, motives, and victim impacts</li>
+                                <li><span>Basic Programming</span><br>Coding with basic languages (C#, HTML, CSS, Python)</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education" role="tabpanel" aria-labelledby="tab-education" hidden>
+                            <ul>
+                                <li class="item">
+                                    <img src="Images/np-logo.png" alt="np logo" class="displaylogo">
+                                    <div>
+                                        <span>2023–2026</span><br>Ngee Ann Polytechnic — Diploma in Cybersecurity &amp; Digital Forensics<br><span class="sub-detail">Graduating CGPA: </span><span class="detail">3.7437</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <img src="Images/acs-logo.png" alt="acs logo" class="displaylogo">
+                                    <div>
+                                        <span>2019–2022</span><br>Anglo-Chinese School (Barker Road)<br><span class="sub-detail">GCE O-Level | L1R4: </span><span class="detail">11</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="certifications" role="tabpanel" aria-labelledby="tab-certifications" hidden>
+                            <ul>
+                                <li class="item">
+                                    <img src="Images/np-logo.png" alt="" class="displaylogo">
+                                    <div>
+                                        <span>Ngee Ann Polytechnic</span><br>Diploma Plus in Advanced Computing Mathematics<br><span class="sub-detail">May 2026 | </span><span class="detail"><a href="Images/cacm-certificate.png">View Certificate</a><span class="sub-detail"> | </span><span class="detail"><a href="Downloadables/CACM260061_DPP_10258255C_CACM_CACM_2026.opencert" download="Kieron_Lim_10258255C_CACM_2026_CACM260061_OpenCert.opencert">Download OpenCert</a>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <img src="Images/microsoft-logo.png" alt="" class="displaylogo">
+                                    <div>
+                                        <span>Microsoft</span><br>Microsoft Certified: Azure Fundamentals (AZ-900)<br><span class="sub-detail">Mar 2026 | </span><span class="detail"><a href="https://learn.microsoft.com/en-us/users/kieron-2312/credentials/8fd725bc10f430d7">Link</a></span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <img src="Images/cisco-logo.png" alt="" class="displaylogo">
+                                    <div>
+                                        <span>Cisco</span><br>Cyber Threat Management<br><span class="sub-detail">Jan 2025 | </span><span class="detail"><a href="https://www.credly.com/badges/e6bd4b38-6fe2-4907-8091-6bd2aefd7ad3/public_url">Link</a></span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <img src="Images/aws-logo.png" alt="" class="displaylogo">
+                                    <div>
+                                        <span>Amazon Web Services (AWS)</span><br>Certified Cloud Practitioner<br><span class="sub-detail">Dec 2024 | </span><span class="detail"><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/e6861fa23a2c4feebb61419f52fb8fbc">Link</a></span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <img src="Images/paloalto-logo.png" alt="" class="displaylogo">
+                                    <div>
+                                        <span>Palo Alto</span><br>Enterprise Security Management<br><span class="sub-detail">Oct 2024 | </span><span class="detail"><a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php">Link</a></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="awards" role="tabpanel" aria-labelledby="tab-awards" hidden>
+                            <ul>
+                                <li class="item">
+                                    <div>
+                                        <span>2026</span><br>Edusave Good Progress Award<br><span class="sub-detail">Ministry of Education</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div>
+                                        <span>2026</span><br>Edusave Certificate of Academic Achievement<br><span class="sub-detail">Ministry of Education</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div>
+                                        <span>2024</span><br>Module Academic Distinction<br><span class="sub-detail">Ngee Ann Polytechnic</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div>
+                                        <span>2022</span><br>Honour's Day CCA Merit Award<br><span class="sub-detail">Anglo-Chinese School (Barker Road)</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div>
+                                        <span>2021</span><br>Honour's Day CCA Distinction Award<br><span class="sub-detail">Anglo-Chinese School (Barker Road)</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div>
+                                        <span>2020</span><br>IvP Certificate of Merit<br><span class="sub-detail">Ministry of Education</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div>
+                                        <span>2019</span><br>Edusave Academic Achievement Award<br><span class="sub-detail">Ministry of Education</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div>
+                                        <span>2018</span><br>Honour's Day Distinction Award<br><span class="sub-detail">Ministry of Education</span>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div>
+                                        <span>2017</span><br>Edusave Good Progress Award<br><span class="sub-detail">Ministry of Education</span>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-        <!-- Projects -->
-        <div id="'projects">
+        <!-- Experience -->
+        <section id="experience" class="section reveal">
             <div class="container">
-                <h1 class="sub-title">My Projects</h1>
-                <div class="projects">
+                <h2 class="sub-title">Experience</h2>
+                <ol class="exp-timeline">
+                    <li class="exp-item reveal">
+                        <div class="exp-node"><img src="Images/kpmg-logo.png" alt=""></div>
+                        <time class="exp-date">Apr 2025 – Apr 2026</time>
+                        <div class="exp-card">
+                            <h3>Cyber Defence Intern</h3>
+                            <p class="exp-org">KPMG Singapore</p>
+                            <ul class="exp-points">
+                                <li>Conducted Web, Network, Host, and Cloud VAPTs on live client environments, validating flaws using <code>OWASP</code>, <code>CIS</code>, and <code>CVSS v3.1</code> frameworks.</li>
+                                <li>Performed manual Web Application VAPT using <code>Burp</code> and other open-source tools</li>
+                                <li>Developed a fully automated <code>PowerShell</code> script for restricted environments to streamline CIS benchmark validation and reduce manual testing by over <strong>10x</strong></li>
+                                <li>Authored technical reports featuring risk justification, impact analysis, and remediation guidance for key stakeholders</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="exp-item reveal">
+                        <div class="exp-node"><img src="Images/np-logo.png" alt=""></div>
+                        <time class="exp-date">Apr 2023 – Apr 2026</time>
+                        <div class="exp-card">
+                            <h3>Cybersecurity & Digital Forensics Student</h3>
+                            <p class="exp-org">Ngee Ann Polytechnic</p>
+                            <ul class="exp-points">
+                                <li>CGPA: <strong>3.7437</strong></li>
+                                <li>Leadership: ICT Society — <strong>Vice President</strong>; led the Welfare Department, directing departmental heads, driving strategic event execution, and establishing event safety for major campus initiatives</li>
+                                <li>CCA Highlights: ISG 2024 Floorball — <strong>3rd Place</strong>; NP Open House 2024 — <strong>Event IC</strong>; NP RED Camp 2023 — <strong>Emcee</strong>; SST-NP IDP — <strong>Group Leader</strong>; NP Freshmen Orientation — <strong>OGL Clan Leader</strong></li>
+                                <li>Completed my diploma spanning across network security, malware analysis, digital forensics, web application penetration testing and cloud security</li>
+                                <li>Earned <strong>4 industry certifications</strong> + <strong>1 diploma plus certificate</strong> during the course</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Hobbies -->
+        <section id="hobbies" class="section reveal">
+            <div class="container">
+                <h2 class="sub-title">Beyond Work</h2>
+                <div class="hobbies-grid">
+                    <article class="hobby-photo-card">
+                        <div class="hobby-photo-wrapper">
+                            <img src="Images/karting-hobby.JPG" alt="Me at KF1" loading="lazy">
+                        </div>
+                        <div class="hobby-body">
+                            <span class="hobby-tag">Racing</span>
+                            <h3>Karting / Sim Racing</h3>
+                            <p>I enjoy chasing lap times through karting and also recently acquired a sim racing setup at home, always pushing to beat my personal best.</p>
+                        </div>
+                    </article>
+
+                    <article class="hobby-photo-card">
+                        <div class="hobby-photo-wrapper">
+                            <img src="Images/guitar-hobby.jpg" alt="Me performing for a small audience in Hanoi, Vietnam" loading="lazy">
+                        </div>
+                        <div class="hobby-body">
+                            <span class="hobby-tag">Arts</span>
+                            <h3>Guitar</h3>
+                            <p>In my spare time, I play covers and sometimes compose freestyle jams on acoustic and electric guitar, shuffling between R&B, pop, rock, and metal.</p>
+                        </div>
+                    </article>
+
+                    <article class="hobby-photo-card">
+                        <div class="hobby-photo-wrapper">
+                            <img src="Images/hiking-hobby.jpg" alt="Conquering the last gate up Mount Fuji, Japan" loading="lazy">
+                        </div>
+                        <div class="hobby-body">
+                            <span class="hobby-tag">Exploration</span>
+                            <h3>Hiking</h3>
+                            <p>I find enjoyment being in nature and feel a sense of achievement hiking to scenic viewpoints. Most recently, I conquered — The Mount Fuji of Japan!</p>
+                        </div>
+                    </article>
+
+                    <article class="hobby-photo-card">
+                        <div class="hobby-photo-wrapper">
+                            <img src="Images/cooking-hobby.jpg" alt="Spanish Paella I made!" loading="lazy">
+                        </div>
+                        <div class="hobby-body">
+                            <span class="hobby-tag">Sensory pursuits</span>
+                            <h3>Cooking</h3>
+                            <p>Used as a creative outlet, I love experimenting with flavours, crafting recipes, exploring international food culture and most importantly — cooking for loved ones :)</p>
+                        </div>
+                    </article>
 
                 </div>
             </div>
+        </section>
+
+        <!-- Projects: Notable things that I have worked on. -->
+        <section id="projects" class="section reveal">
+            <div class="container">
+                <h2 class="sub-title">My Projects</h2>
+
+                <div class="project-filters" role="group" aria-label="Filter projects by category">
+                    <button type="button" class="filter-btn active" aria-pressed="true" data-filter="all">All</button>
+                    <button type="button" class="filter-btn" aria-pressed="false" data-filter="cloud">Cloud</button>
+                    <button type="button" class="filter-btn" aria-pressed="false" data-filter="network">Network Security</button>
+                    <button type="button" class="filter-btn" aria-pressed="false" data-filter="threat">Threat Management</button>
+                    <button type="button" class="filter-btn" aria-pressed="false" data-filter="forensics">Forensics</button>
+                </div>
+
+                <div class="projects" id="projectsGrid">
+                    
+                    <article class="project-card" data-category="cloud">
+                        <div class="project-cover">
+                            <img src="Images/projects/aws-landing-zone.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <span class="project-tag">Cloud</span>
+                            <h3>AWS landing zone baseline</h3>
+                            <p class="project-impact">One-line result, e.g. "Secure multi-account setup with IAM guardrails"</p>
+                            <p>Short description of the problem, the approach and the outcome.</p>
+                            <ul class="project-tech">
+                                <li>AWS</li><li>Terraform</li><li>IAM</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <span class="button-span" aria-hidden="true"></span>
+                                    <span class="btn-label">GitHub</span>
+                                </a>
+                                <a href="#" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                    <span class="button-span" aria-hidden="true"></span>
+                                    <span class="btn-label">Write-up</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="cloud">
+                        <div class="project-cover">
+                            <img src="Images/projects/aws-landing-zone.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <span class="project-tag">Network Security</span>
+                            <h3>NGFW policy hardening</h3>
+                            <p class="project-impact">One-line result, e.g. "Secure multi-account setup with IAM guardrails"</p>
+                            <p>Short description of the problem, the approach and the outcome.</p>
+                            <ul class="project-tech">
+                                <li>AWS</li><li>Terraform</li><li>IAM</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <span class="button-span" aria-hidden="true"></span>
+                                    <span class="btn-label">GitHub</span>
+                                </a>
+                                <a href="#" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                    <span class="button-span" aria-hidden="true"></span>
+                                    <span class="btn-label">Write-up</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="network">
+                        <span class="project-tag">Network Security</span>
+                        <h3>NGFW policy hardening</h3>
+                        <p>Placeholder — outline the problem this project solved, the tools you used, and the result. Replace with your real project summary.</p>
+                        <ul class="project-tech">
+                            <li>Palo Alto</li><li>VLANs</li><li>IDS/IPS</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">Code</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Write-up</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="threat">
+                        <span class="project-tag">Threat Management</span>
+                        <h3>SIEM alert triage dashboard</h3>
+                        <p>Placeholder — outline the problem this project solved, the tools you used, and the result. Replace with your real project summary.</p>
+                        <ul class="project-tech">
+                            <li>Splunk</li><li>SIEM</li><li>Python</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">Code</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Write-up</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="forensics">
+                        <span class="project-tag">Forensics</span>
+                        <h3>Disk image analysis walkthrough</h3>
+                        <p>Placeholder — outline the problem this project solved, the tools you used, and the result. Replace with your real project summary.</p>
+                        <ul class="project-tech">
+                            <li>Autopsy</li><li>FTK Imager</li><li>Chain of custody</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer">Code</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Write-up</a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="filter-empty" id="filterEmpty" hidden>No projects in this category yet.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="cta-band">
+            <div class="container">
+                <h2>Let's talk</h2>
+                <p>What brought you here? Whether it's an opportunity, a question or just a hello, I'd love to hear from you.</p>
+                <div class="cta-actions">
+                    <button type="button" class="btn btn-primary" id="openContactBtn" aria-haspopup="dialog">
+                        <span class="button-span" aria-hidden="true"></span>
+                        <span class="btn-label">Send me a message</span>
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="copyEmailBtn" data-email="kieronlim06@gmail.com">
+                        <span class="button-span" aria-hidden="true"></span>
+                        <span class="btn-label">Copy my email</span>
+                    </button>
+                </div>
+                <p class="cta-status" id="copyStatus" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year"></span> Kieron. Built with love and caffine.</p>
+            <ul class="social-links">
+                <li><a href="https://www.linkedin.com/in/kieronlim/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/Kieding/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="mailto:kieronlim06@gmail.com">Email</a></li>
+            </ul>
         </div>
-    </div>
-</div>
+    </footer>
 
-        <script>
+    <button type="button" id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
 
-            var tablinks = document.getElementsByClassName("tab-links");
-            var tabcontents = document.getElementsByClassName("tab-contents");
-            function opentab(tabname){
-                for(tablink of tablinks){
-                    tablink.classList.remove("active-link");
-                }
-                for(tabcontent of tabcontents){
-                    tabcontent.classList.remove("active-tab");
-                }
-                event.currentTarget.classList.add("active-link");
-                document.getElementById(tabname).classList.add("active-tab");
-            }
+    <!-- Contact popup -->
+    <dialog class="contact-modal" id="contactModal" aria-labelledby="contactModalTitle">
+        <div class="modal-panel">
+            <button type="button" class="modal-close" id="closeContactBtn" aria-label="Close message form">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <h2 id="contactModalTitle">Send me a message</h2>
+            <p class="modal-intro">Have a question, an opportunity, or just want to say hi? Fill this in and I'll get back to you.</p>
 
-        </script>
-    </body>
+            <form id="contactForm" class="contact-form" novalidate>
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required autofocus>
+                    <p class="field-error" id="nameError" role="alert"></p>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <p class="field-error" id="emailError" role="alert"></p>
+                </div>
+                <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <p class="field-error" id="messageError" role="alert"></p>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    <span class="button-span" aria-hidden="true"></span>
+                    <span class="btn-label">Send message</span>
+                </button>
+                <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </dialog>
+
+    <script type="module" src="script.js" defer></script>
+</body>
 </html>
