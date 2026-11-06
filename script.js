@@ -250,12 +250,12 @@ setInterval(obliterateSplineBadge, 20);
     var formStatus = document.getElementById("formStatus");
 
     var validators = {
-        name: function (value) { return value.trim().length >= 2 || "Please enter your name (2+ characters)."; },
+        name: function (value) { return value.trim().length >= 2 || "Tell me your name! (2+ characters)"; },
         email: function (value) {
             var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return pattern.test(value.trim()) || "Please enter a valid email address.";
         },
-        message: function (value) { return value.trim().length >= 10 || "Message should be at least 10 characters."; }
+        message: function (value) { return value.trim().length >= 1 || "Oops! You forgot to write something..."; }
     };
 
     function validateField(field) {
