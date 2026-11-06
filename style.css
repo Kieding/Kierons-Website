@@ -1166,6 +1166,26 @@ html.modal-open { overflow: hidden; }
     .scroll-top { right: var(--space-md); bottom: var(--space-md); }
 }
 
+/* ---------- Mobile Fix for Cybernetic Ring & Profile Frame ---------- */
+@media (max-width: 600px) {
+    .about-col-1 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: var(--space-md);
+    }
+    
+    .cyber-ring-container {
+        width: 220px;
+        height: 220px;
+    }
+
+    .profile-frame {
+        width: 185px;
+        height: 185px;
+    }
+}
+
 /* ---------- 13. Accessibility & motion preferences -------------------------- */
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
