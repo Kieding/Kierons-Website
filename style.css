@@ -1197,6 +1197,118 @@ html.modal-open { overflow: hidden; }
     .reveal { opacity: 1; transform: none; }
 }
 
+/* ---------- 14. Interactive Mini-Terminal Drawer (Ctrl + K) ---------- */
+.terminal-drawer {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 10, 15, 0.82);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.terminal-drawer.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.terminal-window {
+    width: min(92vw, 680px);
+    background: var(--color-bg);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: var(--font-mono);
+}
+
+.terminal-header {
+    background: var(--color-surface);
+    padding: var(--space-xs) var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.terminal-close {
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0 var(--space-2xs);
+    transition: color var(--transition-fast);
+}
+
+.terminal-close:hover {
+    color: var(--color-accent);
+}
+
+.terminal-body {
+    padding: var(--space-md);
+    height: 280px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    color: var(--color-text);
+}
+
+.terminal-welcome {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.highlight-cmd {
+    color: var(--color-accent-warm);
+}
+
+.terminal-output-line {
+    line-height: 1.4;
+}
+
+.terminal-output-line.success { color: var(--color-accent); }
+.terminal-output-line.error { color: var(--color-danger); }
+.terminal-output-line.system { color: var(--color-accent-warm); }
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+.terminal-prompt {
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+#terminalInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    outline: none;
+}
+
 /* ---------- Stats band --------------------------------------------------- */
 .stats-band {
     background: var(--color-bg-alt);

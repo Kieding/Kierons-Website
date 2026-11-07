@@ -490,6 +490,155 @@ setInterval(obliterateSplineBadge, 20);
 
     initAdvancedInteractions();
 
+    /* ---------- 14. Command search terminal logic ---------- */
+(function () {
+    "use strict";
+
+    function initCommandPalette() {
+        var drawer = document.getElementById("terminalDrawer");
+        var toggleBtn = document.getElementById("terminalToggle");
+        var closeBtn = document.getElementById("closeTerminalBtn");
+        var input = document.getElementById("terminalInput");
+        var body = document.getElementById("terminalBody");
+
+        if (!drawer || !input || !body) { return; }
+
+        function openTerminal() {
+            drawer.classList.add("is-open");
+            drawer.hidden = false;
+            setTimeout(function () { input.focus(); }, 50);
+            document.documentElement.classList.add("modal-open");
+        }
+
+        function closeTerminal() {
+            drawer.classList.remove("is-open");
+            setTimeout(function () { drawer.hidden = true; }, 250);
+            document.documentElement.classList.remove("modal-open");
+        }
+
+        // Toggle button handler
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                if (drawer.classList.contains("is-open")) {
+                    closeTerminal();
+                } else {
+                    openTerminal();
+                }
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener("click", closeTerminal);
+        }
+
+        // Backdrop click handler
+        drawer.addEventListener("click", function (e) {
+            if (e.target === drawer) { closeTerminal(); }
+        });
+
+        // Global shortcut (Ctrl + K or Cmd + K)
+        document.addEventListener("keydown", function (e) {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+                e.preventDefault();
+                if (drawer.classList.contains("is-open")) {
+                    closeTerminal();
+                } else {
+                    openTerminal();
+                }
+            }
+            if (e.key === "Escape" && drawer.classList.contains("is-open")) {
+                closeTerminal();
+            }
+        });
+
+        // Command definitions
+        var commands = {
+            help: function () {
+                return [
+                    "<span class='system'>Available Commands:</span>",
+                    "  <span class='highlight-cmd'>skills</span>    - Display technical core competencies",
+                    "  <span class='highlight-cmd'>projects</span>  - Jump directly to featured security projects",
+                    "  <span class='highlight-cmd'>about</span>     - Read bio and background details",
+                    "  <span class='highlight-cmd'>contact</span>   - Open the secure message dispatch form",
+                    "  <span class='highlight-cmd'>sudo hire</span> - Executive recruitment override command",
+                    "  <span class='highlight-cmd'>clear</span>     - Clear the terminal console output",
+                    "  <span class='highlight-cmd'>exit</span>      - Close the terminal session"
+                ].join("<br>");
+            },
+            skills: function () {
+                return "<span class='success'>[OK] Core Skills: Web App VAPT, Cloud Architecture (AWS/Azure), Network Security (NGFW), Cyber Threat Management (SIEM), Malware Analysis.</span>";
+            },
+            projects: function () {
+                window.location.hash = "#projects";
+                closeTerminal();
+                return "<span class='success'>[REDIRECT] Navigating to Projects section...</span>";
+            },
+            about: function () {
+                window.location.hash = "#about";
+                closeTerminal();
+                return "<span class='success'>[REDIRECT] Navigating to About section...</span>";
+            },
+            contact: function () {
+                closeTerminal();
+                var openModalBtn = document.getElementById("openContactBtn");
+                if (openModalBtn) { openModalBtn.click(); }
+                return "<span class='success'>[MODAL] Opening secure contact dispatch drawer...</span>";
+            },
+            "sudo hire": function () {
+                return "<span class='success'>[ACCESS GRANTED] Administrator override accepted! Kieron Lim is ready for full-time Cybersecurity / Cloud roles. Reach out at kieronlim06@gmail.com</span>";
+            },
+            clear: function () {
+                body.innerHTML = "<div class='terminal-welcome'>Console cleared. Type <span class='highlight-cmd'>help</span> for commands.</div>";
+                return null;
+            },
+            exit: function () {
+                closeTerminal();
+                return "";
+            }
+        };
+
+        input.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+                var rawVal = input.value.trim();
+                var cmd = rawVal.toLowerCase();
+                if (!cmd) { return; }
+
+                // Echo command to console log
+                var userLine = document.createElement("div");
+                userLine.innerHTML = "<span class='terminal-prompt'>guest@kieronlim:~$</span> " + escapeHtml(rawVal);
+                body.appendChild(userLine);
+
+                input.value = "";
+
+                // Process command
+                var response = "";
+                if (commands[cmd]) {
+                    response = commands[cmd]();
+                } else {
+                    response = "<span class='error'>zsh: command not found: " + escapeHtml(rawVal) + ". Type 'help' for valid commands.</span>";
+                }
+
+                if (response !== null) {
+                    var resLine = document.createElement("div");
+                    resLine.className = "terminal-output-line";
+                    resLine.innerHTML = response;
+                    body.appendChild(resLine);
+                }
+
+                body.scrollTop = body.scrollHeight;
+            }
+        });
+
+        function escapeHtml(text) {
+            var map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return text.replace(/[&<>"']/g, function (m) { return map[m]; });
+        }
+    }
+
+    initCommandPalette();
+})();
+
 /* =========================================================================
    Extras: stats count-up, copy-email button, contact popup.
    ========================================================================= */

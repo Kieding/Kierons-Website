@@ -53,6 +53,12 @@
                     <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 15.6a9 9 0 1 1-12.2-12A7.5 7.5 0 0 0 20.6 15.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.6M12 18.9v2.6M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                 </button>
+                <button type="button" id="terminalToggle" class="theme-toggle" aria-label="Open command palette (Ctrl + K)">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="4 17 10 11 4 5"></polyline>
+                        <line x1="12" y1="19" x2="20" y2="19"></line>
+                    </svg>
+                </button>
             </div>
         </nav>
     </div>
@@ -99,20 +105,20 @@
         <div class="stats-band">
             <ul class="container stats">
                 <li class="stat">
+                    <span class="stat-number" data-target="20">20</span>
+                    <span class="stat-label">Years Old</span>
+                </li>
+                <li class="stat">
                     <span class="stat-number" data-target="5">5</span>
                     <span class="stat-label">Certifications</span>
                 </li>
                 <li class="stat">
-                    <span class="stat-number" data-target="3.74" data-decimals="2">3.74</span>
-                    <span class="stat-label">Graduating CGPA</span>
-                </li>
-                <li class="stat">
-                    <span class="stat-number" data-target="6">6</span>
-                    <span class="stat-label">Core skill areas</span>
-                </li>
-                <li class="stat">
                     <span class="stat-number" data-target="3">3</span>
                     <span class="stat-label">Years of Study Experience</span>
+                </li>
+                <li class="stat">
+                    <span class="stat-number" data-target="3.74" data-decimals="2">3.74</span>
+                    <span class="stat-label">Graduating CGPA</span>
                 </li>
             </ul>
         </div>
@@ -475,7 +481,7 @@
 
     <footer class="site-footer">
         <div class="container footer-inner">
-            <p>&copy; <span id="year"></span> Kieron. Built with love and caffeine.</p>
+            <p>&copy; 2024-<span id="year"></span> Kieron. Coded with love and caffeine.</p>
             <ul class="social-links">
                 <li><a href="https://www.linkedin.com/in/kieronlim/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                 <li><a href="https://github.com/Kieding/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
@@ -495,7 +501,7 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </button>
             <h2 id="contactModalTitle">Send me a message</h2>
-            <p class="modal-intro">Have a question, an opportunity, or just want to say hi? Fill this in and I'll get back to you.</p>
+            <p class="modal-intro">Have a question, an opportunity, or just want to say hi? Fill this in and I'll get back to you!</p>
 
             <form id="contactForm" class="contact-form" novalidate>
                 <input type="hidden" name="access_key" value="f8edfdac-e4bd-4c31-9620-44da29350ab4">
@@ -525,5 +531,24 @@
     </dialog>
 
     <script type="module" src="script.js" defer></script>
+
+    <!-- Command Palette Terminal Drawer Modal -->
+    <div id="terminalDrawer" class="terminal-drawer" hidden>
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-title">kieron@portfolio:~ (bash)</span>
+                <button type="button" id="closeTerminalBtn" class="terminal-close" aria-label="Close terminal">&times;</button>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+                <div class="terminal-welcome">
+                    [SYS_INIT] Kieron Lim Secure CLI v2.6. Type <span class="highlight-cmd">help</span> for available commands.
+                </div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">guest@kieronlim:~$</span>
+                <input type="text" id="terminalInput" autocomplete="off" spellcheck="false" autofocus>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
