@@ -458,7 +458,7 @@ setInterval(obliterateSplineBadge, 20);
 
     initDynamicAnimations();
 
-    /* ---------- 13. Magnetic Buttons & Card Spotlight ---------- */
+    /* ---------- 13. Magnetic Buttons and Card Spotlight ---------- */
     function initAdvancedInteractions() {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
 
@@ -586,7 +586,7 @@ setInterval(obliterateSplineBadge, 20);
                 return "<span class='success'>[MODAL] Opening secure contact dispatch drawer...</span>";
             },
             "sudo hire": function () {
-                return "<span class='success'>[ACCESS GRANTED] Administrator override accepted! Kieron Lim is ready for full-time Cybersecurity / Cloud roles. Reach out at kieronlim06@gmail.com</span>";
+                return "<span class='success'>[ACCESS GRANTED] Administrator override accepted! Kieron Lim is ready for future opportunities. Reach out at kieronlim06@gmail.com</span>";
             },
             clear: function () {
                 body.innerHTML = "<div class='terminal-welcome'>Console cleared. Type <span class='highlight-cmd'>help</span> for commands.</div>";

@@ -281,6 +281,37 @@ textarea:focus-visible {
     background: transparent;
 }
 
+/* ---------- Navbar Shortcut Badge for Terminal ---------- */
+.terminal-toggle-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.shortcut-badge {
+    position: absolute;
+    top: -8px;
+    right: -14px;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    padding: 0.1rem 0.3rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-accent-warm);
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide badge cleanly on smaller mobile screens where space is tight */
+@media (max-width: 899px) {
+    .shortcut-badge {
+        display: none;
+    }
+}
+
 /* ---------- Bulletproof Watermark Shield ---------- */
 #heroVisual {
     position: relative;
